@@ -1,0 +1,30 @@
+﻿@model database.Models.Traffic
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+
+{
+    <p>
+        @Html.EditorFor(model => model.FirmName)
+    </p>
+    <p>
+        @Html.EditorFor(model => model.EventDate)
+    </p>
+    <p>
+        @Html.EditorFor(model => model.FirmName)
+    </p>
+
+
+
+
+    <p>
+        <input type="submit" name="добавить" />
+    </p>
+
+}
+

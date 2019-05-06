@@ -1,0 +1,35 @@
+﻿@model database.Models.Traffic
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<table class="table">
+    <tr class="thead-dark">
+        <td>Имя фирмы</td>
+        <td>Дата события</td>
+        <td>Имя водителя</td>
+        <td>Путь</td>
+        <td>Деньги</td>
+    </tr>
+
+    @foreach (var i in ViewBag.Traffics)
+    {
+        <tr class="thead-dark">
+            <td colspan="2"><p>@i.FirmName</p></td>
+            <td><p>@i.EventDate</p></td>
+            <td><p>@i.DriverName</p></td>
+            <td><p>@i.Route</p></td>
+            <td><p>@i.Amount</p></td>
+            <td>@Html.ActionLink("Удалить", "Delete", new { id = i.ID })</td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Вернуться на главную страницу", "Index")
+</div>
+
+<h2>Delete</h2>
+

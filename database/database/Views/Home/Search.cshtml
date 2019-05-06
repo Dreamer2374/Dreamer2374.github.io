@@ -1,0 +1,23 @@
+﻿@model IEnumerable<database.Models.Traffic>
+
+@foreach (var item in Model) {
+    <ul>
+        <li>
+            @Html.DisplayFor(modelItem => item.FirmName)
+        </li>
+        <li>
+            @Html.DisplayFor(modelItem => item.EventDate)
+        </li>
+        <li>
+            @Html.DisplayFor(modelItem => item.DriverName)
+        </li>
+        <li>
+            @Html.DisplayFor(modelItem => item.Route)
+        </li>
+        <li>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </li>
+    </ul>
+}
+
+

@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "СТК БД";
+}
+
+
+<div>
+    <h1>Табличка</h1>
+    <table class="table">
+        <tr class="thead-dark">
+            <td scope="col">Имя фирмы</td>
+            <td scope="col">Дата события</td>
+            <td scope="col">Имя водителя</td>
+            <td scope="col">Путь</td>
+            <td scope="col">Деньги</td>
+        </tr>
+
+        @foreach (var i in ViewBag.Traffics)
+        {
+            <tr class="thead-dark">
+                <td><p>@i.FirmName</p></td>
+                <td><p>@i.EventDate</p></td>
+                <td><p>@i.DriverName</p></td>
+                <td><p>@i.Route</p></td>
+                <td><p>@i.Amount</p></td>
+                <td>@Html.ActionLink("Удалить", "Delete", new { id = i.ID })</td>
+            </tr>
+        }
+
+    </table>
+    @using (Ajax.BeginForm("Search", new AjaxOptions { UpdateTargetId = "results" }))
+    {
+        <input type="text" name="somvar" />
+        <input type="submit" name="Найти" />
+    }
+    <div id="results"> </div>
+
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <button id="Deletebut" type="button" class="btn btn-secondary">Удалить элемент</button>
+    </div>
+
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <button type="button" class="btn btn-secondary">@Html.ActionLink("Добавить", "Create")</button>
+    </div>
+
+
+</div>
